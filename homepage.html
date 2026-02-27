@@ -4,3 +4,67 @@
     <meta charset="UTF-8">
     <meta name=" viewport" content="width=device-width, initial-scale=1.0">
     <title>Web-system</title>
+
+    </head>
+
+    <header>
+    <div class="Topbar">
+
+        <p>Web-system</p>
+        <p class="time" id="time">27/92/2026 3:41 PM</p>
+
+    </div>
+
+    </header>
+
+    <style>
+* {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .Topbar {
+            display: flex;
+            justify-content: space-between;
+            background-color: rgba(0, 0, 0, 0.25);
+            color: rgb(0, 0, 0);
+            padding: 4px;
+            backdrop-filter: blur(10px);
+            width: 100%;
+        }
+
+        .time {
+            border: 1px solid rgb(152, 111, 111);
+            padding: 5px 10px;
+            border-radius: 20px;
+            background-color: rgba(63, 59, 59, 0.3);
+            cursor: pointer;
+        }
+
+
+    </style>
+
+<script>
+    function updateTime() {
+        var timeRN = new Date().toLocaleString();
+        var timeNR = document.querySelector("#time");
+        timeNR.innerHTML = timeRN;
+    }
+
+    updateTime();
+    setInterval(updateTime, 1000);
+
+</script>
+
+
+<body style="background-image: url('background.png'); background-size: cover; background-attachment: fixed;">
+
+
+    <h1>Welcome to the Web-system</h1>
+    <p>This is the homepage of the Web-system.</p>
+ 
+    
+</body>
+
+</html>
