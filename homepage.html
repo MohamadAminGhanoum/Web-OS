@@ -22,6 +22,15 @@
             box-sizing: border-box;
         }
 
+        body {
+            font-family: Arial, sans-serif;
+            color: rgb(0, 0, 0);
+            background-image: url('background.png'); 
+            background-size: cover; 
+            background-attachment: fixed;
+        }
+
+
         .Topbar {
             display: flex;
             justify-content: space-between;
@@ -40,24 +49,44 @@
             cursor: pointer;
         }
 
+        .closeScreen {
+            border: 1px solid rgb(152, 111, 111);
+            padding: 5px 5px;
+            border-radius: 20px;
+            background-color: rgb(206, 0, 0);
+            cursor: pointer;
+        }
 
+        .desktopApp {
+            padding: 20px 20px;
+            border: 1px solid rgb(152, 111, 111);
+            border-radius: 20px;
+            background-color: rgba(63, 59, 59, 0.3);
+        }
     </style>
 
 
 
-<body style="background-image: url('background.png'); background-size: cover; background-attachment: fixed;">
+<body>
     <h1>Welcome to the Web-system</h1>
     <p>This is the homepage of the Web-system.</p>
+
+<div class="desktopApp" id="desktopApp">
+    <p>Journaling</p>
+</div>
 
 
     <div id="begin" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
 <div id="beginheader" style="width: 100%; display: flex; align-items: center; cursor: move; justify-content: center; margin-top: 7px;">
         <p>Begin Here.</p>
+
+        <button class="closeScreen" id="closeScreen"></button>
+        <button style="cursor: pointer;" id="openScreen">open</button>
 </div>
 
-    <script src="script.js"></script>
- 
 
+
+    <script src="script.js"></script>
     </div>
     
 </body>

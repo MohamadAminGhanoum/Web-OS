@@ -52,9 +52,43 @@ var currentY = 0;
 
 
 
-var welcomeScreen = document.querySelector("#begin");
+var beginScreen = document.querySelector("#begin");
 function closeScreen(element) { 
     element.style.display = "none";
 }
 
+var beginScreenClose = document.querySelector("#closeScreen");
 
+beginScreenClose.addEventListener("click", function() {
+    closeScreen(beginScreen);
+});
+
+
+function openScreen(element) {
+    element.style.display = "flex";
+}
+var beginScreenOpen = document.querySelector("#openScreen");
+beginScreenOpen.addEventListener("click", function() {
+    openScreen(beginScreen);
+});
+
+var selectedApp = undefined;
+function selectApp(element) {
+    element.classList.add("selected");
+    selectedApp = element;
+}
+
+function deselectApp(element) {
+    element.classList.remove("selected");
+    selectedApp = undefined;
+}
+
+function handleAppClick(element) {
+    if (element.classList.contains("selected")) {
+        deselectApp(element);
+        openScreen(beginScreen);
+    }
+    else {
+        selectApp(element);
+    }
+}
