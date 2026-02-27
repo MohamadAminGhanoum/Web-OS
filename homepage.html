@@ -71,13 +71,13 @@
     <h1>Welcome to the Web-system</h1>
     <p>This is the homepage of the Web-system.</p>
 
-<div class="desktopApp" id="desktopApp">
+<div class="desktopApp" id="desktopApp" onclick="handleAppClick(this)">
     <p>Journaling</p>
 </div>
 
 
-    <div id="blah" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
-<div id="blahheader" style="width: 100%; display: flex; align-items: center; cursor: move; justify-content: center; margin-top: 7px;">
+    <div id="Appwindow" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); display:none;">
+<div id="Appwindowheader" style="width: 100%; display: flex; align-items: center; cursor: move; justify-content: center; margin-top: 7px;">
     <div></div>
         <p>Begin Here.</p>
 
@@ -89,9 +89,9 @@
 </div>
 
 
-    <script src="script.js"></script>
     </div>
-    
+        <script src="script.js"></script>
+
 </body>
 
 </html>

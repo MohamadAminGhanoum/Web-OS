@@ -92,3 +92,34 @@ function handleAppClick(element) {
         selectApp(element);
     }
 }
+
+var biggestIndex = 0;
+function addWindowTapHandling(element) {
+    element.addEventListener("mousedown", () => 
+    handleWindowTap(element)
+    )
+}
+
+
+
+var topBar = document.querySelector("#topBar");
+function openScreen(element) {
+    element.style.display = "flex" ;
+    biggestIndex++;
+    element.style.zIndex = biggestIndex;
+    topBar.style.zIndex = biggestIndex + 1;
+}
+
+function handleWindowTap(element) {
+    biggestIndex++;
+    element.style.zIndex = biggestIndex;
+    topBar.style.zIndex = biggestIndex + 1;
+    deselectApp(selectedApp);
+}
+
+function initializeWindow(element) {
+    var screen = document.querySelector("#" + element.id);
+    addWindowTapHandling(screen);
+    makeClosable(elementName);
+    dragElement(screen);
+}
