@@ -9,7 +9,7 @@
 
 
 
-    dragElement(document.getElementById("begin"));
+    dragElement(document.getElementById("Appwindow"));
 
     function dragElement(element) {
 var initialX = 0;
@@ -52,24 +52,24 @@ var currentY = 0;
 
 
 
-var beginScreen = document.querySelector("#begin");
+var AppwindowScreen = document.querySelector("#Appwindow");
 function closeScreen(element) { 
     element.style.display = "none";
 }
 
-var beginScreenClose = document.querySelector("#closeScreen");
+var AppwindowScreenClose = document.querySelector("#closeScreen");
 
-beginScreenClose.addEventListener("click", function() {
-    closeScreen(beginScreen);
+AppwindowScreenClose.addEventListener("click", function() {
+    closeScreen(AppwindowScreen);
 });
 
 
 function openScreen(element) {
     element.style.display = "flex";
 }
-var beginScreenOpen = document.querySelector("#openScreen");
-beginScreenOpen.addEventListener("click", function() {
-    openScreen(beginScreen);
+var AppwindowScreenOpen = document.querySelector("#openScreen");
+AppwindowScreenOpen.addEventListener("click", function() {
+    openScreen(AppwindowScreen);
 });
 
 var selectedApp = undefined;
@@ -86,7 +86,7 @@ function deselectApp(element) {
 function handleAppClick(element) {
     if (element.classList.contains("selected")) {
         deselectApp(element);
-        openScreen(beginScreen);
+        openScreen(AppwindowScreen);
     }
     else {
         selectApp(element);
