@@ -109,14 +109,29 @@ function handleWindowTap(element) {
     deselectApp(selectedApp);
 }
 
-function initializeWindow(element) {
-    var screen = document.querySelector("#" + element.id);
+function initializeWindow(elementName) {
+    var screen = document.querySelector("#" + elementName);
     addWindowTapHandling(screen);
-    makeClosable(elementName);
     dragElement(screen);
 }
 
-initializeWindow(AppwindowScreen);
+initializeWindow(Appwindow);
 
-addWindowTapHandling(AppwindowScreen);
 
+
+var content = [ 
+{
+    title: "Journal",
+    date: "28/02/2026",
+    content: ` 
+    <p contenteditable="true">Journaling...</p>
+    `
+}
+]
+
+function setNotesContent(index) {
+    var notesContent = document.querySelector("#journals");
+    notesContent.innerHTML = content[index].content;
+}
+
+setNotesContent(0);
