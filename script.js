@@ -64,14 +64,6 @@ AppwindowScreenClose.addEventListener("click", function() {
 });
 
 
-function openScreen(element) {
-    element.style.display = "flex";
-}
-var AppwindowScreenOpen = document.querySelector("#openScreen");
-AppwindowScreenOpen.addEventListener("click", function() {
-    openScreen(AppwindowScreen);
-});
-
 var selectedApp = undefined;
 function selectApp(element) {
     element.classList.add("selected");
@@ -123,3 +115,8 @@ function initializeWindow(element) {
     makeClosable(elementName);
     dragElement(screen);
 }
+
+initializeWindow(AppwindowScreen);
+
+addWindowTapHandling(AppwindowScreen);
+

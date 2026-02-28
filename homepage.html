@@ -7,7 +7,7 @@
 
     </head>
 
-    <div class="Topbar">
+    <div class="Topbar" id="topBar">
 
         <p class="topbarcontent">Web-system</p>
         <p class="topbarcontent" id="time">27/92/2026 3:41 PM</p>
@@ -39,6 +39,7 @@
             padding: 4px;
             backdrop-filter: blur(10px);
             width: 100%;
+            position: relative;
         }
 
         .topbarcontent {
@@ -62,6 +63,23 @@
             border: 1px solid rgb(152, 111, 111);
             border-radius: 20px;
             background-color: rgba(63, 59, 59, 0.3);
+            cursor: pointer;
+            width: 120px;
+            text-align: center;
+            margin: 20px;
+        }
+
+        .Appwindowheader {
+            border: 1px solid rgb(152, 111, 111);
+            border-radius: 20px;
+            background-color: rgba(63, 59, 59, 0.3);
+            color: rgb(0, 0, 0);
+            width: 100%; 
+            display: flex; 
+            align-items: center; 
+            cursor: move; 
+            justify-content: center; 
+            margin-top: 7px;
         }
     </style>
 
@@ -77,7 +95,7 @@
 
 
     <div id="Appwindow" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); display:none;">
-<div id="Appwindowheader" style="width: 100%; display: flex; align-items: center; cursor: move; justify-content: center; margin-top: 7px;">
+<div id="Appwindowheader" class="Appwindowheader">
     <div></div>
         <p>Begin Here.</p>
 
