@@ -9,7 +9,6 @@
 
 
 
-    dragElement(document.getElementById("Appwindow"));
 
     function dragElement(element) {
 var initialX = 0;
@@ -115,23 +114,55 @@ function initializeWindow(elementName) {
     dragElement(screen);
 }
 
-initializeWindow(Appwindow);
+initializeWindow("Appwindow");
 
 
 
 var content = [ 
 {
-    title: "Journal",
+    title: "1st journal",
     date: "28/02/2026",
     content: ` 
-    <p contenteditable="true">Journaling...</p>
+    <p style="color: aliceblue;" contenteditable="true">Journaling...</p>
+    `
+},
+{
+    title: "2nd journal",
+    date: "29/02/2026",
+    content: ` 
+    <p style="color: aliceblue;" contenteditable="true">lul...</p>
     `
 }
+
 ]
 
 function setNotesContent(index) {
-    var notesContent = document.querySelector("#journals");
+    var notesContent = document.querySelector("#Notes");
     notesContent.innerHTML = content[index].content;
 }
 
 setNotesContent(0);
+
+function addTosidebar(index) {
+    var sidebar = document.querySelector("#sidebar");
+    var note = content[index];
+    var newDiv = document.createElement("div");
+    newDiv.innerHTML = `
+    <div style="padding: 10px 14px; margin-bottom: 4px; border-radius: 10px; background-color: rgba(63, 59, 59, 0.3); width: 100%; cursor: pointer; transition: background-color 0.2s ease;" onmouseover="this.style.backgroundColor='rgba(63, 59, 59, 0.5)'" onmouseout="this.style.backgroundColor='rgba(63, 59, 59, 0.3)'">
+    <p style="margin: 2px;">
+      ${note.title}
+    </p>
+    <p style="font-size: 12px; margin: 0px;">
+      ${note.date}
+    </p>
+    </div>
+  `;
+  newDiv.addEventListener("click", function() {
+    setNotesContent(index);
+  });
+    sidebar.appendChild(newDiv);
+    }
+
+    for (let i = 0; i < content.length; i++) {
+        addTosidebar(i);
+    }
