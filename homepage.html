@@ -54,6 +54,7 @@
             border: 1px solid rgb(152, 111, 111);
             padding: 5px 5px;
             border-radius: 20px;
+            margin-right: 5px;
             background-color: rgb(206, 0, 0);
             cursor: pointer;
         }
@@ -67,19 +68,37 @@
             width: 120px;
             text-align: center;
             margin: 20px;
+            justify-content: space-between;
         }
 
         .Appwindowheader {
-            border: 1px solid rgb(152, 111, 111);
-            border-radius: 20px;
+            border-radius: 20px 20px 0px 0px;
             background-color: rgba(63, 59, 59, 0.3);
             color: rgb(0, 0, 0);
             width: 100%; 
             display: flex; 
             align-items: center; 
             cursor: move; 
-            justify-content: center; 
-            margin-top: 7px;
+            justify-content: space-between; 
+            flex-direction: row;
+            padding: 5px;
+        }
+
+        .Appwindow {
+            border: 1px solid rgb(152, 111, 111);
+            border-radius: 20px;
+            background-color: rgba(63, 59, 59, 0.6);
+            color: rgb(0, 0, 0);
+            width: 550px; 
+            height: 550px; 
+            display: none; 
+            flex-direction: column; 
+            align-items: center; 
+            justify-content: flex-start; 
+            position: absolute;
+            top: 50%; 
+            left: 50%;
+            transform: translate(-50%, -50%);
         }
     </style>
 
@@ -90,20 +109,18 @@
     <p>This is the homepage of the Web-system.</p>
 
 <div class="desktopApp" id="desktopApp" onclick="handleAppClick(this)">
-    <p>Journaling</p>
-</div>
+<p>Journaling app</p>
 
-
-    <div id="Appwindow" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); display:none;">
+    <div id="Appwindow" class="Appwindow">
 <div id="Appwindowheader" class="Appwindowheader">
-    <div></div>
-        <p>Begin Here.</p>
-
+    <div style="width: 16px;"></div>
+    <p>Journaling.</p>
         <button class="closeScreen" id="closeScreen"></button>
 </div>
 
-<div style="background-color: bisque; width: 520px; height: 480px; padding: 16px;">
+<div style="background-color: bisque; width: 90%; height: 90%; margin-top: 10px; display: flex; align-items: center; justify-content: center;">
     <p>Plz work</p>
+</div>
 </div>
 
 
