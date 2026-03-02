@@ -120,10 +120,18 @@ initializeWindow("Appwindow");
 
 var content = [ 
 {
-    title: "1st journal",
+    title: "Hiiii",
     date: "28/02/2026",
     content: ` 
-    <p style="color: aliceblue;" contenteditable="true">Journaling...</p>
+    <p style="color: aliceblue;" contenteditable="true">Welcome to my web-OS, where
+    you can experience a mix of different operating systems all in one website. <br><br>
+    <img src="OIP.webp" style="width: 400px; border-radius: 14px;"/>
+    <br><br>
+    I have tried to work on good looking UI, so it really looks nice when experiencing this.
+    And honestly, i am proud of this result.
+    I followed a guide by hackclub, https://jams.hackclub.com/batch/webOS/part-4,
+    and it was really helpful in guiding me towards how to do this.     
+    </p>
     `
 },
 {

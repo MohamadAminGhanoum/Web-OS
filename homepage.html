@@ -43,7 +43,7 @@
         }
 
         .topbarcontent {
-            border: 1px solid rgb(152, 111, 111);
+            border: 1px solid rgb(126, 156, 177);
             padding: 5px 10px;
             border-radius: 20px;
             background-color: rgba(63, 59, 59, 0.3);
@@ -60,16 +60,18 @@
         }
 
         .desktopApp {
-            padding: 20px 20px;
-            border: 1px solid rgb(152, 111, 111);
             border-radius: 20px;
-            background-color: rgba(63, 59, 59, 0.3);
             cursor: pointer;
-            width: 120px;
-            text-align: center;
-            margin: 20px;
-            justify-content: space-between;
+            width: 70px;
+            text-align: center;;
+            transition: transform 0.3s ease, margin 0.3s ease;
+            transform-origin: bottom center;
         }
+
+    .desktopApp:hover {
+        transform: scale(1.5);
+        margin: 0 15px;
+    }
 
         .Appwindowheader {
             border-radius: 20px 20px 0px 0px;
@@ -102,16 +104,37 @@
             transform: translate(-50%, -50%);
             cursor: auto;
         }
+
+        .Bottombar {
+            padding: 1px;
+            left: 40px;
+            right: 40px;
+            background-color: rgba(0, 0, 0, 0.25);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: fixed;
+            bottom: 14px;
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            border: 1px solid rgb(126, 156, 177);
+        }
     </style>
 
 
 
 <body>
-    <h1>Welcome to the Web-system</h1>
-    <p>This is the homepage of the Web-system.</p>
 
-<div class="desktopApp" id="desktopApp" onclick="handleAppClick(this, 'Appwindow')">
-<p>Notes</p>
+    <div class="Bottombar">
+
+<div id="desktopApp" onclick="handleAppClick(this, 'Appwindow')">
+<img class="desktopApp" src="notesapp.png"/>
+    </div>
+
+    <div id="desktopApp" onclick="handleAppClick(this, 'Appwindow2')">
+        <img class="desktopApp"/>
+</div>
+
 
     <div id="Appwindow" class="Appwindow">
 <div id="Appwindowheader" class="Appwindowheader">
@@ -125,9 +148,9 @@
     <div contenteditable="true" id="Notes" style="overflow-y: scroll; padding: 14px 14px; width: calc(100% - 150px); text-align: left;"></div>
 </div>
 </div>
-    </div>
-        <script src="script.js"></script>
 
+
+        <script src="script.js"></script>
 </body>
 
 </html>
