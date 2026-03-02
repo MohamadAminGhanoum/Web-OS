@@ -7,11 +7,25 @@
     updateTime();
     setInterval(updateTime, 1000);
 
-const BatteryLevel = document.querySelector(".battery");
 navigator.getBattery().then(function(battery) {
+function updateBatteryLevel() {
+const BatteryLevel = document.querySelector(".battery span");
     const level = battery.level;
     const status = level * 100 + "%";
-    BatteryLevel.innerHTML = status;
+        BatteryLevel.innerHTML = status;
+    const batteryJuice = document.querySelector(".batteryJuice");
+    batteryJuice.style.width = level * 100 + "%";
+    if (level > 0.5) {
+        batteryJuice.style.backgroundColor = "rgba(0, 255, 0, 0.7)";
+    } else if (level > 0.2) {
+        batteryJuice.style.backgroundColor = "rgba(255, 255, 0, 0.7)";
+    } else {
+        batteryJuice.style.backgroundColor = "rgba(255, 0, 0, 0.7)";
+    }
+}
+    updateBatteryLevel();
+    battery.addEventListener("levelchange", updateBatteryLevel);
+
 });
 
 

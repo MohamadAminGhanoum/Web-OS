@@ -10,7 +10,10 @@
     <div class="Topbar" id="topBar">
 
         <p class="topbarcontent">Web-system</p>
-        <div class="battery" style="margin-right: 10px;"></div>
+        <div class="battery">
+            <div class="batteryJuice" id="batteryJuice"></div>
+            <span style="position: absolute; color: white; font-size: 12px;"></span>
+        </div>
         <p class="topbarcontent" id="time">27/92/2026 3:41 PM</p>
 
     </div>
@@ -54,13 +57,21 @@
         .battery {
             width: 45px;
             height: 24px;
-            border: 1px solid rgb(126, 156, 177);
+            border: 2px solid rgb(255, 255, 255);
             border-radius: 4px;
-            background-color: rgba(63, 59, 59, 0.3);
+            background-color: transparent;
             position: relative;
-            align-items: center;
-            display: flex;
-            justify-content: center;}
+            padding: 3px;
+        }
+
+        .batteryJuice {
+            height: 100%;
+            border-radius: 2px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            transition: width 0.8s ease, background-color 0.9s ease;
+        }
 
         .closeScreen {
             border: 1px solid rgb(152, 111, 111);
