@@ -74,10 +74,10 @@ function deselectApp(element) {
     selectedApp = undefined;
 }
 
-function handleAppClick(element) {
+function handleAppClick(element, windowID) {
     if (element.classList.contains("selected")) {
         deselectApp(element);
-        openScreen(AppwindowScreen);
+        openScreen(document.querySelector("#" + windowID));
     }
     else {
         selectApp(element);
@@ -94,17 +94,20 @@ function addWindowTapHandling(element) {
 
 
 var topBar = document.querySelector("#topBar");
+var Bottombar = document.querySelector("#Bottombar");
 function openScreen(element) {
     element.style.display = "flex" ;
     biggestIndex++;
     element.style.zIndex = biggestIndex;
     topBar.style.zIndex = biggestIndex + 1;
+    Bottombar.style.zIndex = biggestIndex + 1;
 }
 
 function handleWindowTap(element) {
     biggestIndex++;
     element.style.zIndex = biggestIndex;
     topBar.style.zIndex = biggestIndex + 1;
+    Bottombar.style.zIndex = biggestIndex + 1;
     deselectApp(selectedApp);
 }
 
@@ -174,3 +177,16 @@ function addTosidebar(index) {
     for (let i = 0; i < content.length; i++) {
         addTosidebar(i);
     }
+
+
+
+
+
+
+    initializeWindow("Appwindow2");
+    var Appwindow2Screen = document.querySelector("#Appwindow2");
+    var Appwindow2ScreenClose = document.querySelector("#closeScreen2");
+
+    Appwindow2ScreenClose.addEventListener("click", function() {
+        closeScreen(Appwindow2Screen);
+    });

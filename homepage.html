@@ -125,16 +125,16 @@
 
 <body>
 
-    <div class="Bottombar">
+    <div class="Bottombar" id="Bottombar">
 
 <div id="desktopApp" onclick="handleAppClick(this, 'Appwindow')">
 <img class="desktopApp" src="notesapp.png"/>
     </div>
 
-    <div id="desktopApp" onclick="handleAppClick(this, 'Appwindow2')">
-        <img class="desktopApp"/>
+    <div id="desktopApp2" onclick="handleAppClick(this, 'Appwindow2')">
+        <img class="desktopApp" src="83197_calculator_1024x1024.png"/>
 </div>
-
+</div>
 
     <div id="Appwindow" class="Appwindow">
 <div id="Appwindowheader" class="Appwindowheader">
@@ -148,6 +148,16 @@
     <div contenteditable="true" id="Notes" style="overflow-y: scroll; padding: 14px 14px; width: calc(100% - 150px); text-align: left;"></div>
 </div>
 </div>
+
+<div id="Appwindow2" class="Appwindow">
+    <div id="Appwindowheader2" class="Appwindowheader">
+        <div style="width: 16px;"></div>
+        <p>Calculator</p>
+        <button class="closeScreen" id="closeScreen2"></button>
+    </div>
+    <div class="Calculator">
+    </div>
+    </div>
 
 
         <script src="script.js"></script>
