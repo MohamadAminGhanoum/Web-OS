@@ -186,13 +186,23 @@
     </div>
     </div>
 
-    <div id="Appwindow3" class="Appwindow">
+    <div id="Appwindow3" class="Appwindow" style="align-items: flex-start;">
         <div id="Appwindowheader3" class="Appwindowheader">
             <div style="width: 16px;"></div>
             <p>Settings</p>
             <button class="closeScreen" id="closeScreen3" ></button>
         </div>
+        <div id="settingsSidebar" class="settingsSidebar">
+            <div>
+                <div class="settingsSidebarContent">About</div>
+                <div  class="settingsSidebarContent">Help</div>
+                <div class="settingsSidebarContent">Feedback</div>
+                <div class="settingsSidebarContent">Dark Mode</div>
+            </div>
+                </div>
+
 <div>
+
     <label class="switchDarkMode">
         <input type="checkbox" onchange="turnToDarkmode()">
         <span class="slider"></span>
@@ -202,6 +212,34 @@
         <script src="script.js"></script>
 
         <style>
+            .settingsSidebarContent:hover {
+                background-color: rgba(63, 59, 59, 0.6);
+            }
+            .settingsSidebar {
+                width: 150px;
+                height: 100%;
+                padding: 16px;
+                backdrop-filter: blur(10px);
+                background-color: rgba(63, 59, 59, 0.6);
+                backdrop-filter: blur(10px);
+                color: aliceblue;
+                border-radius: 0px 0px 0px 20px;
+                display: flex;
+                transition: background-color 0.3s ease;
+            }
+.settingsSidebarContent {
+    padding: 10px 22px;
+    margin-bottom: 5px;
+    background-color: rgba(63, 59, 59, 0.3);
+    display: flex;
+    flex-direction: column;
+    color: aliceblue;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border-radius: 8px;
+}
+
             .switchDarkMode {
                 position: relative;
                 display: inline-block;
@@ -224,6 +262,7 @@
                 background-color: #ccc;
                 transition: .4s;
                 border-radius: 34px;
+                align-items: center !important;
             }
 
             .slider:before {
