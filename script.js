@@ -146,7 +146,7 @@ var content = [
     title: "Hiiii",
     date: "28/02/2026",
     content: ` 
-    <p style="color: aliceblue;" contenteditable="true">Welcome to my web-OS, where
+    <p contenteditable="true">Welcome to my web-OS, where
     you can experience a mix of different operating systems all in one website. <br><br>
     <img src="OIP.webp" style="width: 400px; border-radius: 14px;"/>
     <br><br>
@@ -161,7 +161,7 @@ var content = [
     title: "2nd journal",
     date: "29/02/2026",
     content: ` 
-    <p style="color: aliceblue;" contenteditable="true">lul...</p>
+    <p contenteditable="true">lul...</p>
     `
 }
 
@@ -210,3 +210,20 @@ function addTosidebar(index) {
     Appwindow2ScreenClose.addEventListener("click", function() {
         closeScreen(Appwindow2Screen);
     });
+
+
+
+    initializeWindow("Appwindow3");
+    var Appwindow3Screen = document.querySelector("#Appwindow3");
+    var Appwindow3ScreenClose = document.querySelector("#closeScreen3");
+
+    Appwindow3ScreenClose.addEventListener("click", function() {
+        closeScreen(Appwindow3Screen);
+    });
+
+
+
+function turnToDarkmode() {
+    document.documentElement.classList.toggle("dark-mode");
+
+}

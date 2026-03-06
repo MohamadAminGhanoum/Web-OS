@@ -157,6 +157,10 @@
     <div id="desktopApp2" onclick="handleAppClick(this, 'Appwindow2')">
         <img class="desktopApp" src="83197_calculator_1024x1024.png"/>
 </div>
+
+<div id="desktopApp3" onclick="handleAppClick(this, 'Appwindow3')">
+        <img class="desktopApp" src="settings.png"/>
+</div>
 </div>
 
     <div id="Appwindow" class="Appwindow">
@@ -182,8 +186,100 @@
     </div>
     </div>
 
-
+    <div id="Appwindow3" class="Appwindow">
+        <div id="Appwindowheader3" class="Appwindowheader">
+            <div style="width: 16px;"></div>
+            <p>Settings</p>
+            <button class="closeScreen" id="closeScreen3" ></button>
+        </div>
+<div>
+    <label class="switchDarkMode">
+        <input type="checkbox" onchange="turnToDarkmode()">
+        <span class="slider"></span>
+    </label>
+</div>
+    </div>
         <script src="script.js"></script>
+
+        <style>
+            .switchDarkMode {
+                position: relative;
+                display: inline-block;
+                width: 60px;
+                height: 34px;
+            }
+            .switchDarkMode input {
+                opacity: 0;
+                width: 0;
+                height: 0;
+            }
+
+            .slider {
+                position: absolute;
+                cursor: pointer;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background-color: #ccc;
+                transition: .4s;
+                border-radius: 34px;
+            }
+
+            .slider:before {
+                position: absolute;
+                content: "";
+                height: 26px;
+                width: 26px;
+                left: 4px;
+                bottom: 4px;
+                background-color: white;
+                transition: .4s;
+                border-radius: 50%;
+            }
+            .switchDarkMode input:checked + .slider {
+                background-color: #2196F3;
+            }
+            .switchDarkMode input:checked + .slider:before {
+                transform: translateX(26px);
+            }
+            
+    
+  .dark-mode .Topbar {
+    background-color: rgba(255, 255, 255, 0.25) !important;
+    color: rgb(255, 255, 255) !important;
+    transition: background-color 0.5s ease, color 0.5s ease;
+  }
+  .dark-mode .Bottombar {
+    background-color: rgba(255, 255, 255, 0.25) !important;
+    color: rgb(0, 0, 0) !important;
+    transition: background-color 0.5s ease, color 0.5s ease;
+  }
+ .dark-mode .Appwindow {
+    background-color: rgba(255, 255, 255, 0.6) !important;
+    color: rgb(0, 0, 0) !important;
+    transition: background-color 0.5s ease, color 0.5s ease;
+  }
+  .dark-mode .Appwindowheader {
+    background-color: rgba(255, 255, 255, 0.3) !important;
+    color: rgb(0, 0, 0) !important;
+    transition: background-color 0.5s ease, color 0.5s ease;
+  }
+  .dark-mode {
+    background-image: url('lightBG.webp') !important;
+    background-size: cover !important;
+    background-attachment: fixed !important;
+    transition: background-image 0.5s ease;
+  }
+              .dark-mode .battery span {
+                color: rgb(8, 7, 7) !important;
+            }
+
+            .dark-mode #Notes {
+                color: rgb(0, 0, 0) !important;
+            }
+
+        </style>
 </body>
 
 </html>
