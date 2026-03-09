@@ -117,6 +117,7 @@ var topBar = document.querySelector("#topBar");
 var Bottombar = document.querySelector("#Bottombar");
 function openScreen(element) {
     element.style.display = "flex" ;
+    element.style.animation = "windowOpen 0.3s ease forwards";
     biggestIndex++;
     element.style.zIndex = biggestIndex;
     topBar.style.zIndex = biggestIndex + 1;

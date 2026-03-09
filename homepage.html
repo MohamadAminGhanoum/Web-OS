@@ -6,6 +6,7 @@
     <title>Web-system</title>
 
     </head>
+<body>
 
     <div class="Topbar" id="topBar">
 
@@ -110,7 +111,7 @@
         }
 
         .Appwindow {
-            border: 1px solid rgb(152, 111, 111);
+            border: 1px solid rgb(126, 156, 177);
             border-radius: 20px;
             background-color: rgba(1, 1, 17, 0.6);
             color: rgb(255, 255, 255);
@@ -122,14 +123,24 @@
             align-items: center; 
             justify-content: flex-start; 
             position: absolute;
-            top: 50%; 
-            left: 50%;
             transform: translate(-50%, -50%);
             cursor: auto;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+        }
+
+        @keyframes windowOpen {
+            0% {
+                transform: translate(-50%, -50%) scale(0.5);
+                opacity: 0;
+            }
+            100% {
+                transform: translate(-50%, -50%) scale(1);
+                opacity: 1;
+            }
         }
 
         .Bottombar {
-            padding: 1px;
+            padding: 3px 12px;
             left: 40px;
             right: 40px;
             background-color: rgba(0, 0, 0, 0.25);
@@ -146,7 +157,6 @@
 
 
 
-<body>
 
     <div class="Bottombar" id="Bottombar">
 
@@ -163,7 +173,7 @@
 </div>
 </div>
 
-    <div id="Appwindow" class="Appwindow">
+    <div id="Appwindow" class="Appwindow" style="top: 40%; left: 30%;">
 <div id="Appwindowheader" class="Appwindowheader">
     <div style="width: 16px;"></div>
     <p>Notes</p>
@@ -176,7 +186,7 @@
 </div>
 </div>
 
-<div id="Appwindow2" class="Appwindow">
+<div id="Appwindow2" class="Appwindow" style="top: 43%; left: 70%;">
     <div id="Appwindowheader2" class="Appwindowheader">
         <div style="width: 16px;"></div>
         <p>Calculator</p>
@@ -186,12 +196,14 @@
     </div>
     </div>
 
-    <div id="Appwindow3" class="Appwindow" style="align-items: flex-start;">
+    <div id="Appwindow3" class="Appwindow" style="align-items: flex-start; top: 50%; left: 50%;">
         <div id="Appwindowheader3" class="Appwindowheader">
             <div style="width: 16px;"></div>
             <p>Settings</p>
             <button class="closeScreen" id="closeScreen3" ></button>
         </div>
+            <div style="display: flex; width: 100%; height: 100%; flex: 1;">
+
         <div id="settingsSidebar" class="settingsSidebar">
             <div>
                 <div class="settingsSidebarContent">About</div>
@@ -200,14 +212,15 @@
                 <div class="settingsSidebarContent">Dark Mode</div>
             </div>
                 </div>
-
-<div>
-
+<div style="padding: 24px; flex: 1;">
+        <p style="padding-bottom: 6px;">Dark Mode</p>
     <label class="switchDarkMode">
         <input type="checkbox" onchange="turnToDarkmode()">
         <span class="slider"></span>
     </label>
 </div>
+                </div>
+
     </div>
         <script src="script.js"></script>
 
