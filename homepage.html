@@ -9,14 +9,30 @@
 <body>
 
     <div class="Topbar" id="topBar">
-
+<div style="display: flex; align-items: center; gap: 4px;">
         <p class="topbarcontent">Web-system</p>
+        <div class="dropdown">
+            <button class="dropBtn">About</button>
+            <div class="dropContent">
+                <a href="#">Made by: Abohisham</a>
+                <a href="#">Version 1.0</a>
+            </div>
+        </div>
+        <div class="dropdown">
+        <button class="dropBtn">Help</button>
+        <div class="dropContent">
+            <a href="#">Contact @Abohisham on slack</a>
+        </div>
+        </div>
+        </div>
+
+        <div style="display: flex; align-items: center; gap: 4px;">
         <div class="battery">
             <div class="batteryJuice" id="batteryJuice"></div>
             <span style="position: absolute; color: white; font-size: 12px;"></span>
         </div>
         <p class="topbarcontent" id="time">27/92/2026 3:41 PM</p>
-
+</div>
     </div>
 
 
@@ -35,6 +51,41 @@
             background-attachment: fixed;
         }
 
+        .dropdown {
+            position: relative;
+        }
+        .dropContent {
+            display: none;
+            position: absolute;
+            background-color: rgb(30, 30, 40, 0.3);
+            min-width: 180px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+            margin-top: 5px;
+            backdrop-filter: blur(10px);
+        }
+        .dropContent a {
+            color: black;
+            padding: 9px 12px;
+            text-decoration: none;
+            display: block;
+            width: 100%;
+        }
+        .dropContent a:hover {
+            background-color: rgba(63, 59, 59, 0.6);
+            border-radius: 8px;
+        }
+        .dropdown:hover .dropContent {
+            display: block;
+        }
+        .dropBtn {
+            background-color: rgba(86, 83, 83, 0.3);
+            padding: 9px;
+            color: rgb(0, 0, 0);
+            border: none;
+            border-radius: 9px;
+            font-size: 15px;
+        }
 
         .Topbar {
             display: flex;
@@ -48,10 +99,9 @@
         }
 
         .topbarcontent {
-            border: 1px solid rgb(126, 156, 177);
-            padding: 5px 10px;
-            border-radius: 20px;
-            background-color: rgba(63, 59, 59, 0.3);
+            padding: 6px 9px;
+            border-radius: 8px;
+            background-color: rgba(86, 83, 83, 0.3);
             cursor: pointer;
         }
 
@@ -330,7 +380,15 @@
             .dark-mode #Notes {
                 color: rgb(0, 0, 0) !important;
             }
+            .dark-mode .dropBtn {
+                color: white !important;
+                transition: color 0.5s ease;
+            }
 
+            .dark-mode .dropContent {
+                background-color: rgb(255, 255, 255, 0.5) !important;
+                transition: background-color 0.5s ease;
+            }
         </style>
 </body>
 
