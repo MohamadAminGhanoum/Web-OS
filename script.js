@@ -222,7 +222,14 @@ function addTosidebar(index) {
         closeScreen(Appwindow3Screen);
     });
 
+initializeWindow("Appwindow4");
+var Appwindow4Screen = document.querySelector("#Appwindow4");
+var Appwindow4ScreenClose = document.querySelector("#closeScreen4");
 
+Appwindow4ScreenClose.addEventListener("click", function() {
+    closeScreen(Appwindow4Screen);
+});
+    
 
 function turnToDarkmode() {
     document.documentElement.classList.toggle("dark-mode");

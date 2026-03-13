@@ -29,7 +29,7 @@
         <div style="display: flex; align-items: center; gap: 4px;">
         <div class="battery">
             <div class="batteryJuice" id="batteryJuice"></div>
-            <span style="position: absolute; color: white; font-size: 12px;"></span>
+            <span style="position: absolute; color: white; font-size: 14px;"></span>
         </div>
         <p class="topbarcontent" id="time">27/92/2026 3:41 PM</p>
 </div>
@@ -106,18 +106,20 @@
         }
 
         .battery {
-            width: 45px;
-            height: 24px;
+            width: 50px;
+            height: 28px;
             border: 2px solid rgb(255, 255, 255);
-            border-radius: 4px;
+            border-radius: 6px;
             background-color: transparent;
             position: relative;
-            padding: 3px;
+            padding: 6px 9px;
+            align-items: center;
+            display: flex;
         }
 
         .batteryJuice {
             height: 100%;
-            border-radius: 2px;
+            border-radius: 5px 2px 2px 5px;
             position: absolute;
             top: 0;
             left: 0;
@@ -137,14 +139,18 @@
             border-radius: 20px;
             cursor: pointer;
             width: 70px;
+            height: 70px;
             text-align: center;;
             transition: transform 0.3s ease, margin 0.3s ease;
             transform-origin: bottom center;
+            object-fit: contain;
+            padding: 3px;
         }
 
     .desktopApp:hover {
         transform: scale(1.5);
         margin: 0 15px;
+        filter: drop-shadow(0 5px 5px rgba(0, 0, 0, 0.5));
     }
 
         .Appwindowheader {
@@ -209,6 +215,9 @@
 
 
     <div class="Bottombar" id="Bottombar">
+<div id="desktopApp4" onclick="handleAppClick(this, 'Appwindow4')">
+    <img class="desktopApp" src="Browsericon.png">
+</div>
 
 <div id="desktopApp" onclick="handleAppClick(this, 'Appwindow')">
 <img class="desktopApp" src="notesapp.png"/>
@@ -221,6 +230,19 @@
 <div id="desktopApp3" onclick="handleAppClick(this, 'Appwindow3')">
         <img class="desktopApp" src="settings.png"/>
 </div>
+</div>
+
+
+<div id="Appwindow4" class="Appwindow" style="top: 50%; left: 50%;">
+    <div id="Appwindowheader4" class="Appwindowheader">
+        <div style="width: 16px;"></div>
+        <p>Browsi</p>
+        <button class="closeScreen" id="closeScreen4"></button>
+    </div>
+
+    <div class="Browsi" style="display: flex; height: 100%;">
+    </div>
+
 </div>
 
     <div id="Appwindow" class="Appwindow" style="top: 40%; left: 30%;">
