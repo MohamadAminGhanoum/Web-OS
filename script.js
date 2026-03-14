@@ -242,3 +242,18 @@ function turnToDarkmode() {
     document.documentElement.classList.toggle("dark-mode");
 
 }
+
+
+function opentab(tabs, tabName) {
+var i, tabcontent, sidebarButton;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for(i=0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    sidebarButton = document.getElementsByClassName("sidebarButton");
+    for(i=0; i < sidebarButton.length; i++){
+        sidebarButton[i].className = sidebarButton[i].className.replace(" active", "");
+    }
+    document.getElementById(tabName).style.display = "block";
+    tabs.currentTarget.className += " active";
+}

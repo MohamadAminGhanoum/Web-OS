@@ -49,6 +49,7 @@
             background-image: url('sunset-colorful-3840x2160-10299.jpg'); 
             background-size: cover; 
             background-attachment: fixed;
+            overflow: hidden;
         }
 
         .dropdown {
@@ -219,6 +220,46 @@
             cursor: pointer; 
             object-fit: contain;
         }
+
+        .sidebar {
+            padding: 16px 20px;
+            background-color: rgba(0, 0, 0, 0.4);
+            align-self: flex-start !important;
+            left: 4px;
+            height: calc(100% - 22px);
+            width: 150px;
+            margin: 11px;
+            margin-bottom: 11px;
+            border-radius: 20px;
+            flex-direction: column;
+            display: flex;
+            position: relative;
+            flex-wrap: wrap;
+        }
+
+        .sidebarButton {
+            flex-direction: column;
+            padding: 12px 20px;
+            align-items: center !important;
+            position: relative;
+            display: flex;
+            margin-top: 4px;
+            border: none;
+            border-radius: 14px;
+            cursor: pointer;
+            background-color: rgba(100, 97, 97, 0.15);
+            color: white;
+        }
+
+        .sidebar button.active {
+            background-color: rgba(255, 255, 255) !important;
+        }
+        .tabcontent {
+            display: none; 
+            text-align: left;
+            margin-top: 30px;
+            margin-left: 10px;
+    }
     </style>
 
 
@@ -260,20 +301,29 @@
 </div>
 
 <div id="Appwindow5" class="Appwindow" style="top:46%; left:26%">
-    <div id="Appwindowheader5" class="Appwindowheader">
+    <div id="Appwindow5header" class="Appwindowheader">
         <div style="width: 16px;"></div>
         <p>Home</p>
         <button class="closeScreen" id="closeScreen5"></button>
     </div>
+    <div style="display: flex; width:100%; height: 100%;">
     <div class="sidebar">
-        <button>About</button>
-        <button>Future updates</button>
+        <button class="sidebarButton" onclick="opentab(this, 'About')">About</button>
+        <button class="sidebarButton" onclick="opentab(this, 'Futureupdates')">Future updates</button>
+    </div>
+
+    <div id="About" class="tabcontent">
+        <p>this worked yooi</p>
+    </div>
+    <div id="Futureupdates" class="tabcontent">
+        <p>futureasdasdf</p>
+    </div>
     </div>
 </div>
 
 
 <div id="Appwindow4" class="Appwindow" style="top: 50%; left: 50%;">
-    <div id="Appwindowheader4" class="Appwindowheader">
+    <div id="Appwindow4header" class="Appwindowheader">
         <div style="width: 16px;"></div>
         <p>Browsi</p>
         <button class="closeScreen" id="closeScreen4"></button>
@@ -298,13 +348,13 @@
         <button class="closeScreen" id="closeScreen"></button>
 </div>
 <div class="notes" style="display: flex; width: 100%; height:100%;">
-    <div id="sidebar" style="width: 150px; padding: 16px; background-color: rgba(63, 59, 59, 0.6); backdrop-filter: blur(10px); color: aliceblue; border-radius: 0px 0px 0px 20px; cursor: pointer;" ></div>
+    <div id="sidebar" class="sidebar" ></div>
     <div contenteditable="true" id="Notes" style="overflow-y: scroll; padding: 14px 14px; width: calc(100% - 150px); text-align: left;"></div>
 </div>
 </div>
 
 <div id="Appwindow2" class="Appwindow" style="top: 43%; left: 70%;">
-    <div id="Appwindowheader2" class="Appwindowheader">
+    <div id="Appwindow2header" class="Appwindowheader">
         <div style="width: 16px;"></div>
         <p>Calculator</p>
         <button class="closeScreen" id="closeScreen2"></button>
@@ -314,18 +364,18 @@
     </div>
 
     <div id="Appwindow3" class="Appwindow" style="align-items: flex-start; top: 45%; left: 72%;">
-        <div id="Appwindowheader3" class="Appwindowheader">
+        <div id="Appwindow3header" class="Appwindowheader">
             <div style="width: 16px;"></div>
             <p>Settings</p>
             <button class="closeScreen" id="closeScreen3" ></button>
         </div>
             <div style="display: flex; width: 100%; height: 100%; flex: 1;">
-        <div id="settingsSidebar" class="settingsSidebar">
+        <div id="settingsSidebar" class="sidebar">
             <div>
                 <div class="settingsSidebarContent">About</div>
                 <div  class="settingsSidebarContent">Help</div>
                 <div class="settingsSidebarContent">Feedback</div>
-                <div class="settingsSidebarContent">Dark Mode</div>
+                <div class="settingsSidebarContent">Theme</div>
             </div>
                 </div>
 <div style="padding: 24px; flex: 1;">
