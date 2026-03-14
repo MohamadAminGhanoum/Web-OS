@@ -215,21 +215,34 @@
 
 
     <div class="Bottombar" id="Bottombar">
-<div id="desktopApp4" onclick="handleAppClick(this, 'Appwindow4')">
+<div style="position: relative;">
+        <div id="desktopApp4" onclick="handleAppClick(this, 'Appwindow4')">
     <img class="desktopApp" src="Browsericon.png">
 </div>
+        <div class="hide">Browsi</div>
+</div>
 
+<div style="position: relative;">
 <div id="desktopApp" onclick="handleAppClick(this, 'Appwindow')">
 <img class="desktopApp" src="notesapp.png"/>
     </div>
+    <div class="hide">Notes</div>
+</div>
 
+<div style="position:relative;">
     <div id="desktopApp2" onclick="handleAppClick(this, 'Appwindow2')">
         <img class="desktopApp" src="83197_calculator_1024x1024.png"/>
 </div>
+<div class="hide">Calculator</div>
+</div>
 
+<div style="position: relative;">
 <div id="desktopApp3" onclick="handleAppClick(this, 'Appwindow3')">
         <img class="desktopApp" src="settings.png"/>
 </div>
+<div class="hide">Settings</div>
+</div>
+
 </div>
 
 
@@ -274,7 +287,7 @@
     </div>
     </div>
 
-    <div id="Appwindow3" class="Appwindow" style="align-items: flex-start; top: 50%; left: 50%;">
+    <div id="Appwindow3" class="Appwindow" style="align-items: flex-start; top: 45%; left: 72%;">
         <div id="Appwindowheader3" class="Appwindowheader">
             <div style="width: 16px;"></div>
             <p>Settings</p>
@@ -321,6 +334,21 @@
     gap: 7px;
     top: 20px;
     justify-content: center;
+}
+.hide {
+    display: none;
+}
+#desktopApp4:hover + .hide,
+#desktopApp:hover + .hide,
+#desktopApp2:hover + .hide,
+#desktopApp3:hover + .hide {
+    display: block;
+    color: white;
+    position: absolute;
+    bottom: 120px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 20px;
 }
 
 .websitebuttons :hover{
