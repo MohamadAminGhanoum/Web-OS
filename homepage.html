@@ -241,9 +241,14 @@
     </div>
     <div class="Browsi" style="padding: 20px; width: 100%; height: 100%;">
         <form action="https://www.google.com/search" method="get" style="display: flex; width: 100%; gap: 8px;" name="searching" target="_blank">
-            <input autocomplete="on" class="searchbar" required="required" type="text" name="q" placeholder="Search Google...">
+            <input autocomplete="on" onmousedown="event.stopPropagation()" class="searchbar" required="required" type="text" name="q" placeholder="Search Google...">
             <button class="submit" type="submit">Search</button>
         </form>
+        <div class="websitebuttons">
+        <a class="websites" href="https://www.youtube.com" target="_top" href=>Youtube</a>
+        <a class="websites" href="https://www.slack.com" target="_blank" href="">Slack</a>
+        <a class="websites" href="https://flavortown.hackclub.com/kitchen" target="_blank" href=>Flavortown</a>
+</div>
     </div>
 </div>
 
@@ -297,11 +302,37 @@
         <script src="script.js"></script>
 
         <style>
+.websites {
+    background-color: rgb(255, 235, 240, 0.5);
+    padding: 20px 24px;
+    border-radius: 20px;
+    cursor: pointer;
+    border: 1px solid rgb(126, 156, 177);
+    text-decoration: none;
+    display: inline block;
+    color: rgb(0, 0, 0);
+}
+
+.websitebuttons {
+    flex-direction: row;
+    display: flex;
+    position: relative;
+    align-items: center !important;
+    gap: 7px;
+    top: 20px;
+    justify-content: center;
+}
+
+.websitebuttons :hover{
+    background-color: rgb(255, 235, 240, 0.8);
+    transform: translateY(-3px);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
 
     .searchbar {
         width: 100%; 
         padding: 10px 14px; 
-        border-radius: 8px; 
+        border-radius: 30px; 
         border: 1px solid rgb(126, 156, 177);
         margin-top: 20px;
         text-align: left;
