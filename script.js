@@ -230,6 +230,13 @@ Appwindow4ScreenClose.addEventListener("click", function() {
     closeScreen(Appwindow4Screen);
 });
     
+initializeWindow("Appwindow5");
+var Appwindow5Screen = document.querySelector("#closeScreen5");
+var Appwindow5ScreenClose = document.querySelector("#closeScreen5");
+
+Appwindow5ScreenClose.addEventListener("click", function() {
+    closeScreen(Appwindow5Screen);
+});
 
 function turnToDarkmode() {
     document.documentElement.classList.toggle("dark-mode");
