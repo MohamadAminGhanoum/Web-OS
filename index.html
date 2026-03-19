@@ -259,6 +259,7 @@
             text-align: left;
             margin-top: 30px;
             margin-left: 10px;
+            bottom: 2px;
     }
     </style>
 
@@ -309,14 +310,24 @@
     <div style="display: flex; width:100%; height: 100%;">
     <div class="sidebar">
         <button class="sidebarButton" onclick="opentab(this, 'About')">About</button>
+        <button class="sidebarButton" onclick="opentab(this, 'Repo')">Repo</button>
         <button class="sidebarButton" onclick="opentab(this, 'Futureupdates')">Future updates</button>
     </div>
 
     <div id="About" class="tabcontent">
         <p>this worked yooi</p>
     </div>
+<div id="Repo" class="tabcontent">
+<p>You are more than welcome to take a look at my code in this <a href="https://github.com/MohamadAminGhanoum/Web-OS" target="_blank" class="nicetextAnimation">Repo</a></p>
+</div>
+
     <div id="Futureupdates" class="tabcontent">
-        <p>futureasdasdf</p>
+        <p style="size: 16px;">In the future, i am thinking about adding:
+            <li style="margin-left: 19px;">Wallpaper picking</li>
+            <li style="margin-left: 19px;">More and better Apps</li>
+            <li style="margin-left: 19px;">More customization in settings</li>
+            <li style="margin-left: 19px;"><strong>dm me for other ideas in slack @Abohisham</strong></li>
+        </p>
     </div>
     </div>
 </div>
@@ -391,6 +402,24 @@
         <script src="script.js"></script>
 
         <style>
+.nicetextAnimation {
+	place-self: center;
+	background: linear-gradient(90deg, #00f, #0ff, #00f) -100%/ 200%;
+    	-webkit-background-clip: text;
+	        background-clip: text;
+            font-size: 18px;
+	color: transparent;
+	animation: shimmer 2s linear infinite
+}
+
+@keyframes shimmer { to { background-position: 100% } }
+@media (forced-colors: active) {
+  p {
+    background: #212121;
+    color: aquamarine
+  }
+}
+
 .websites {
     background-color: rgb(255, 235, 240, 0.5);
     padding: 20px 24px;
