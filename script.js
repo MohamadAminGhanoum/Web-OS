@@ -2,6 +2,11 @@
         var timeRN = new Date().toLocaleString();
         var timeNR = document.querySelector("#time");
         timeNR.innerHTML = timeRN;
+        var lockscreenTimeRN = new Date ().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+        var lockscreenTimeNR = document.querySelector("#lockscreenTime")
+        if (lockscreenTimeNR) {
+            lockscreenTimeNR.innerHTML = lockscreenTimeRN;
+        }
     }
 
     updateTime();
