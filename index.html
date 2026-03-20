@@ -326,7 +326,7 @@
             <li style="margin-left: 19px;">Wallpaper picking</li>
             <li style="margin-left: 19px;">More and better Apps</li>
             <li style="margin-left: 19px;">More customization in settings</li>
-            <li style="margin-left: 19px;"><strong>dm me for other ideas in slack @Abohisham</strong></li>
+            <li style="margin-left: 19px;"><strong>dm me for other ideas(or bugs) in slack @Abohisham</strong></li>
         </p>
     </div>
     </div>
@@ -345,7 +345,7 @@
             <button class="submit" type="submit">Search</button>
         </form>
         <div class="websitebuttons">
-        <a class="websites" href="https://www.youtube.com" target="_top" href=>Youtube</a>
+        <a class="websites" href="https://www.youtube.com" target="_blank" href=>Youtube</a>
         <a class="websites" href="https://www.slack.com" target="_blank" href="">Slack</a>
         <a class="websites" href="https://flavortown.hackclub.com/kitchen" target="_blank" href=>Flavortown</a>
 </div>
@@ -381,14 +381,12 @@
             <button class="closeScreen" id="closeScreen3" ></button>
         </div>
             <div style="display: flex; width: 100%; height: 100%; flex: 1;">
-        <div id="settingsSidebar" class="sidebar">
-            <div>
-                <div class="settingsSidebarContent">About</div>
-                <div  class="settingsSidebarContent">Help</div>
-                <div class="settingsSidebarContent">Feedback</div>
-                <div class="settingsSidebarContent">Theme</div>
-            </div>
+            <div class="sidebar">
+                <button class="sidebarButton" onclick="opentab(this, 'About')">About</button>
+                <button class="sidebarButton" onclick="opentab(this, 'Help')">Help</button>
+                <button class="sidebarButton" onclick="opentab(this, 'Theme')">Theme</button>
                 </div>
+                <div id="Theme" class="tabcontent">
 <div style="padding: 24px; flex: 1;">
         <p style="padding-bottom: 6px;">Dark Mode</p>
     <label class="switchDarkMode">
@@ -396,7 +394,10 @@
         <span class="slider"></span>
     </label>
 </div>
-                </div>
+        </div>
+                    </div>
+
+            </div>
 
     </div>
         <script src="script.js"></script>

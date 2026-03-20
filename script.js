@@ -231,7 +231,7 @@ Appwindow4ScreenClose.addEventListener("click", function() {
 });
     
 initializeWindow("Appwindow5");
-var Appwindow5Screen = document.querySelector("#closeScreen5");
+var Appwindow5Screen = document.querySelector("#Appwindow5");
 var Appwindow5ScreenClose = document.querySelector("#closeScreen5");
 
 Appwindow5ScreenClose.addEventListener("click", function() {
