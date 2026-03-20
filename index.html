@@ -385,17 +385,18 @@
 </div>
 
 
-<div id="Appwindow4" class="Appwindow" style="top: 50%; left: 50%;">
+<div id="Appwindow4" class="Appwindow" style="top: 50%; left: 50%; width: 900px !important; height: 600px !important;">
     <div id="Appwindow4header" class="Appwindowheader">
         <div style="width: 16px;"></div>
         <p>Browsi</p>
         <button class="closeScreen" id="closeScreen4"></button>
     </div>
-    <div class="Browsi" style="padding: 20px; width: 100%; height: 100%;">
+    <div class="Browsi" style="padding: 20px; width: 100%; height: 100%; display: flex; flex-direction: column;">
         <form action="https://www.google.com/search" method="get" style="display: flex; width: 100%; gap: 8px;" name="searching" target="_blank">
-            <input autocomplete="on" onmousedown="event.stopPropagation()" class="searchbar" required="required" type="text" name="q" placeholder="Search Google...">
-            <button class="submit" type="submit">Search</button>
+            <input autocomplete="on" onmousedown="event.stopPropagation()" class="searchbar" type="text" name="q" placeholder="https://www.wikipedia.org">
+            <button class="submit" onclick="Go()" type="submit">Search</button>
         </form>
+        <iframe id="browsiFrame" src="https://www.wikipedia.org" style="width: 100%; height: 100%; border: none; background: white; margin-top: 14px;"></iframe>
         <div class="websitebuttons">
         <a class="websites" href="https://www.youtube.com" target="_blank" href=>Youtube</a>
         <a class="websites" href="https://www.slack.com" target="_blank" href="">Slack</a>
@@ -482,6 +483,7 @@
     text-decoration: none;
     display: inline block;
     color: rgb(0, 0, 0);
+    margin-bottom: 7px;
 }
 
 .websitebuttons {
@@ -520,14 +522,14 @@
         padding: 10px 14px; 
         border-radius: 30px; 
         border: 1px solid rgb(126, 156, 177);
-        margin-top: 20px;
+        margin-top: 8px;
         text-align: left;
         flex: 1;
     }
     .submit {
         padding: 10px 14px;
         padding: 10px 16px;
-        margin-top: 20px;
+        margin-top: 8px;
         border: none;
         border-radius: 8px;
         background-color: rgba(193, 193, 193, 0.3);
