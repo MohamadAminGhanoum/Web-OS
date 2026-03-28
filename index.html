@@ -316,7 +316,7 @@
         .tabcontent {
             display: none; 
             text-align: left;
-            margin-top: 30px;
+            margin-top: 10px !important;
             margin-left: 10px;
             bottom: 2px;
     }
@@ -465,10 +465,11 @@
         </div>
             <div style="display: flex; width: 100%; height: 100%; flex: 1;">
             <div class="sidebar">
-                <button class="sidebarButton" onclick="opentab(this, 'About')">About</button>
-                <button class="sidebarButton" onclick="opentab(this, 'Help')">Help</button>
+                <button class="sidebarButton" onclick="opentab(this, 'General')">General</button>
+                <button class="sidebarButton" onclick="opentab(this, 'Background')">Background</button>
                 <button class="sidebarButton" onclick="opentab(this, 'Theme')">Theme</button>
                 </div>
+
                 <div id="Theme" class="tabcontent">
 <div style="padding: 24px; flex: 1;">
         <p style="padding-bottom: 6px;">Dark Mode</p>
@@ -477,21 +478,74 @@
         <span class="slider"></span>
     </label>
 </div>
-
-<div id="About" class="tabcontent">
-    <img src="profile.png" class="profilepic">
- 
-</div>
         </div>
+
+<div id="General" class="tabcontent">
+    <div style="padding: 24px; flex: 1;">
+    <div class="profileinfo">
+        <img src="profile.png" class="profilepic">
+        <p class="profilename">Abohisham</p>
+        <p class="profilemail">Abohisham@sussybaka.com</p>
+    </div>
+        </div>
+</div>
+
+<div id="Background" class="tabcontent">
+    <div style="padding: 24px; flex: 1;">
+        <h2 style="margin-bottom: 15px;">Background Selecting:</h2>
+        <img src="sunset-colorful-3840x2160-10299.jpg" class="bgoptions" onclick="changebg('sunset-colorful-3840x2160-10299.jpg')">
+        <img src="background.png" class="bgoptions" onclick="changebg('background.png')">
+        <img src="Ex9MlTC-nature-wallpaper-wallpaper.jpg" class="bgoptions" onclick="changebg('Ex9MlTC-nature-wallpaper-wallpaper.jpg')">
+    </div>
+</div>
+
+<style>
+    .bgoptions {
+        width: 100px;
+        height: 80px;
+        border-radius: 14px;
+        cursor: pointer;
+        border: 2px solid transparent;
+    }
+    .bgoptions:hover {
+        border: 2px solid rgb(126, 156, 177);
+    }
+</style>
+<script>
+    function changebg(image) {
+        document.body.style.backgroundImage = `url('${image}')`;
+    }
+</script>
     </div>
 
             </div>
 
 <style>
+    .profileinfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 14px;
+    padding: 15px 150px;
+    width: 100%;
+    margin: 5px;
+    margin-top: -10px;
+    }
+    .profilename {
+        font-size: 18px;
+        font-weight: bold;
+        margin-top: 10px;
+    }
+    .profilemail {
+        font-size: 14px;
+        color: rgb(50, 50, 50);
+    }
     .profilepic {
-        width: 100px;
+        width: 80px;
         border-radius: 50%;
-        margin-top: 20px;
+        margin-top: 5px;
+        left: 10px !important;
     }
 </style>
 
@@ -686,11 +740,11 @@
                 transition: background-color 0.5s ease, color 0.5s ease;
             }
             .dark-mode .sidebar {
-                background-color: rgba(255, 255, 255, 0.6) !important;
+                background-color: rgba(161, 158, 158, 0.5) !important;
                 transition: background-color 0.5s ease;
             }
             .dark-mode .sidebarButton {
-                background-color: rgba(255, 255, 255, 0.3) !important;
+                background-color: rgba(255, 255, 255, 0.1) !important;
                 color: rgb(0, 0, 0) !important;
                 transition: background-color 0.5s ease, color 0.5s ease;
             }
