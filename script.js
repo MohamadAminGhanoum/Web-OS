@@ -164,7 +164,7 @@ var content = [
     `
 },
 {
-    title: "2nd journal",
+    title: "Top secret",
     date: "29/02/2026",
     content: ` 
     <p contenteditable="true">lul...</p>

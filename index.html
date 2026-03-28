@@ -93,6 +93,7 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            user-select: none;
         }
 
         body {
@@ -301,11 +302,17 @@
             cursor: pointer;
             background-color: rgba(100, 97, 97, 0.15);
             color: white;
+            transition: transform 0.3s ease, background-color 0.3s ease;
         }
 
         .sidebar button.active {
             background-color: rgba(255, 255, 255) !important;
         }
+
+        .sidebar button:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+
         .tabcontent {
             display: none; 
             text-align: left;
@@ -367,7 +374,11 @@
     </div>
 
     <div id="About" class="tabcontent">
-        <p>this worked yooi</p>
+        <p style="width: 500px; ">This is an operating system that can run in the webbrowser. I have focused in this project on simplicity and good layout or ui. 
+            I tried not to hardcode or use complex coding (it is tho not my level).
+            I got kickstarted into this, when i found the guide for making an operating system in the browser
+
+</p>
     </div>
 <div id="Repo" class="tabcontent">
 <p>You are more than welcome to take a look at my code in this <a href="https://github.com/MohamadAminGhanoum/Web-OS" target="_blank" class="nicetextAnimation">Repo</a></p>
@@ -378,6 +389,7 @@
             <li style="margin-left: 19px;">Wallpaper picking</li>
             <li style="margin-left: 19px;">More and better Apps</li>
             <li style="margin-left: 19px;">More customization in settings</li>
+            <li style="margin-left: 19px;">Storage to save data locally</li>
             <li style="margin-left: 19px;"><strong>dm me for other ideas(or bugs) in slack @Abohisham</strong></li>
         </p>
     </div>
@@ -396,9 +408,9 @@
             <input autocomplete="on" onmousedown="event.stopPropagation()" class="searchbar" type="text" name="q" placeholder="https://www.wikipedia.org">
             <button class="submit" onclick="Go()" type="submit">Search</button>
         </form>
-        <iframe id="browsiFrame" src="https://www.wikipedia.org" style="width: 100%; height: 100%; border: none; background: white; margin-top: 14px;"></iframe>
+        <iframe id="browsiFrame" src="https://www.wikipedia.org" style="width: 100%; height: 100%; border: none; background: white; margin-top: 14px; border-radius: 14px;"></iframe>
         <div class="websitebuttons">
-        <a class="websites" href="https://www.youtube.com" target="_blank" href=>Youtube</a>
+        <a class="websites" href="https://toolbox.hackclub.com/" target="_blank">HCB Toolbox</a>
         <a class="websites" href="https://www.slack.com" target="_blank" href="">Slack</a>
         <a class="websites" href="https://flavortown.hackclub.com/kitchen" target="_blank" href=>Flavortown</a>
 </div>
@@ -417,13 +429,31 @@
 </div>
 </div>
 
-<div id="Appwindow2" class="Appwindow" style="top: 43%; left: 70%;">
+<div id="Appwindow2" class="Appwindow" style="top: 43%; left: 70%; height: 640px !important; width: 350px !important;">
     <div id="Appwindow2header" class="Appwindowheader">
         <div style="width: 16px;"></div>
         <p>Calculator</p>
         <button class="closeScreen" id="closeScreen2"></button>
     </div>
     <div class="Calculator">
+                <iframe id="browsiFrame" scrolling="no" src="https://www.cssscript.com/demo/responsive-ios-calculator/"></iframe>
+
+                <style>
+                    .Calculator
+                    {
+                        display: flex;
+                        width: 100%;
+                        height: 100%;
+                        overflow: hidden;
+                    }
+                    .Calculator iframe {
+                        border: none;
+                        background: white;
+                        border-radius: 14px;
+                        flex: 1;
+                        top: -130px !important;
+                    }
+                </style>
     </div>
     </div>
 
@@ -447,10 +477,23 @@
         <span class="slider"></span>
     </label>
 </div>
+
+<div id="About" class="tabcontent">
+    <img src="profile.png" class="profilepic">
+ 
+</div>
         </div>
-                    </div>
+    </div>
 
             </div>
+
+<style>
+    .profilepic {
+        width: 100px;
+        border-radius: 50%;
+        margin-top: 20px;
+    }
+</style>
 
     </div>
         <script src="script.js"></script>
@@ -476,7 +519,7 @@
 
 .websites {
     background-color: rgb(255, 235, 240, 0.5);
-    padding: 20px 24px;
+    padding: 10px 24px;
     border-radius: 20px;
     cursor: pointer;
     border: 1px solid rgb(126, 156, 177);
@@ -536,33 +579,7 @@
         cursor: pointer;
     }
 
-            .settingsSidebarContent:hover {
-                background-color: rgba(63, 59, 59, 0.6);
-            }
-            .settingsSidebar {
-                width: 150px;
-                height: 100%;
-                padding: 16px;
-                backdrop-filter: blur(10px);
-                background-color: rgba(63, 59, 59, 0.6);
-                backdrop-filter: blur(10px);
-                color: aliceblue;
-                border-radius: 0px 0px 0px 20px;
-                display: flex;
-                transition: background-color 0.3s ease;
-            }
-.settingsSidebarContent {
-    padding: 10px 22px;
-    margin-bottom: 5px;
-    background-color: rgba(63, 59, 59, 0.3);
-    display: flex;
-    flex-direction: column;
-    color: aliceblue;
-    font-size: 14px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    border-radius: 8px;
-}
+
 
             .switchDarkMode {
                 position: relative;
@@ -648,6 +665,34 @@
             .dark-mode .dropContent {
                 background-color: rgb(255, 255, 255, 0.5) !important;
                 transition: background-color 0.5s ease;
+            }
+            .dark-mode .dropContent a {
+                color: rgb(0, 0, 0) !important;
+                transition: color 0.5s ease;
+            }
+            .dark-mode .websites {
+                background-color: rgb(255, 235, 240, 0.8) !important;
+                color: rgb(0, 0, 0) !important;
+                transition: background-color 0.5s ease, color 0.5s ease;
+            }
+            .dark-mode .searchbar {
+                background-color: rgb(255, 255, 255, 0.8) !important;
+                color: rgb(0, 0, 0) !important;
+                transition: background-color 0.5s ease, color 0.5s ease;
+            }
+            .dark-mode .submit {
+                background-color: rgba(193, 193, 193, 0.8) !important;
+                color: rgb(0, 0, 0) !important;
+                transition: background-color 0.5s ease, color 0.5s ease;
+            }
+            .dark-mode .sidebar {
+                background-color: rgba(255, 255, 255, 0.6) !important;
+                transition: background-color 0.5s ease;
+            }
+            .dark-mode .sidebarButton {
+                background-color: rgba(255, 255, 255, 0.3) !important;
+                color: rgb(0, 0, 0) !important;
+                transition: background-color 0.5s ease, color 0.5s ease;
             }
         </style>
 </body>
