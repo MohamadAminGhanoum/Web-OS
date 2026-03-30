@@ -33,6 +33,7 @@
         cursor: pointer;
         display: flex;
         text-align: center;
+        -webkit-backdrop-filter: blur(20px);
     }
 
     .lockscreen.hidden {
@@ -117,6 +118,7 @@
             border-radius: 8px;
             margin-top: 5px;
             backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
         }
         .dropContent a {
             color: black;
@@ -150,6 +152,7 @@
             backdrop-filter: blur(10px);
             width: 100%;
             position: relative;
+            -webkit-backdrop-filter: blur(10px);
         }
 
         .topbarcontent {
@@ -208,6 +211,10 @@
         filter: drop-shadow(0 5px 5px rgba(0, 0, 0, 0.5));
     }
 
+    .desktopApp-active img {
+        border-bottom: 3px solid rgb(255, 255, 255);
+        transition: transform 0.3s ease, margin 0.3s ease;
+    }
         .Appwindowheader {
             border-radius: 20px 20px 0px 0px;
             background-color: rgba(63, 59, 59, 0.3);
@@ -237,6 +244,7 @@
             transform: translate(-50%, -50%);
             cursor: auto;
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+            -webkit-backdrop-filter: blur(15px);
         }
 
         @keyframes windowOpen {
@@ -263,6 +271,7 @@
             backdrop-filter: blur(10px);
             border-radius: 16px;
             border: 1px solid rgb(126, 156, 177);
+            -webkit-backdrop-filter: blur(10px);
         }
 
         .mainScreenApp {
@@ -327,6 +336,12 @@
 <div style="margin:17px;">
     <div id="desktopApp5" onclick="handleAppClick(this, 'Appwindow5')">
         <img class="mainScreenApp" src="Home.webp">
+    </div>
+</div>
+
+<div style="margin: 17px;">
+    <div id="desktopApp6" onclick="handleAppClick(this, 'Appwindow6')">
+        <img src="Paper.io-2.png" class="mainScreenApp">
     </div>
 </div>
 
@@ -397,6 +412,7 @@
     </div>
 </div>
 
+<div ></div>
 
 <div id="Appwindow4" class="Appwindow" style="top: 50%; left: 50%; width: 900px !important; height: 600px !important;">
     <div id="Appwindow4header" class="Appwindowheader">
@@ -430,7 +446,7 @@
 </div>
 </div>
 
-<div id="Appwindow2" class="Appwindow" style="top: 43%; left: 70%; height: 640px !important; width: 350px !important;">
+<div id="Appwindow2" class="Appwindow" style="top: 50%; left: 70%; height: 640px !important; width: 350px !important;">
     <div id="Appwindow2header" class="Appwindowheader">
         <div style="width: 16px;"></div>
         <p>Calculator</p>
@@ -452,7 +468,8 @@
                         background: white;
                         border-radius: 14px;
                         flex: 1;
-                        top: -130px !important;
+                        height: calc(100% + 70px);
+                        margin-top: -70px;
                     }
                 </style>
     </div>
@@ -473,7 +490,7 @@
 
                 <div id="Theme" class="tabcontent">
 <div style="padding: 24px; flex: 1;">
-        <p style="padding-bottom: 6px;">Dark Mode</p>
+        <p style="padding-bottom: 6px;">Light Mode</p>
     <label class="switchDarkMode">
         <input type="checkbox" onchange="turnToDarkmode()">
         <span class="slider"></span>

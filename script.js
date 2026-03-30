@@ -12,11 +12,12 @@
     updateTime();
     setInterval(updateTime, 1000);
 
-navigator.getBattery().then(function(battery) {
+    if (navigator.getBattery) {
+        navigator.getBattery().then(function(battery) {
 function updateBatteryLevel() {
 const BatteryLevel = document.querySelector(".battery span");
     const level = battery.level;
-    const status = level * 100 + "%";
+    const status = Math.floor(level * 100) + "%";
         BatteryLevel.innerHTML = status;
     const batteryJuice = document.querySelector(".batteryJuice");
     batteryJuice.style.width = level * 100 + "%";
@@ -32,7 +33,7 @@ const BatteryLevel = document.querySelector(".battery span");
     battery.addEventListener("levelchange", updateBatteryLevel);
 
 });
-
+}
 
 
     function dragElement(element) {
@@ -51,10 +52,10 @@ var currentY = 0;
     initialX = e.clientX;
     initialY = e.clientY;
     document.onmouseup = stopDragging;
-    document.onmousemove = dragElement;
+    document.onmousemove = moveElement;
   }
 
-    function dragElement(e) {
+    function moveElement(e) {
     e = e || window.event;
     e.preventDefault();
 
@@ -62,6 +63,7 @@ var currentY = 0;
     currentY = initialY - e.clientY;
     initialX = e.clientX;
     initialY = e.clientY;
+    element.style.transform = "none";
 
         element.style.top = (element.offsetTop - currentY) + "px";
     element.style.left = (element.offsetLeft - currentX) + "px";
@@ -77,14 +79,18 @@ var currentY = 0;
 
 
 var AppwindowScreen = document.querySelector("#Appwindow");
-function closeScreen(element) { 
+function closeScreen(element, buttonID) { 
     element.style.display = "none";
+        if (buttonID) {
+        let button = document.getElementById(buttonID);
+        if (button) button.classList.remove("desktopApp-active");
+    }
 }
 
 var AppwindowScreenClose = document.querySelector("#closeScreen");
 
 AppwindowScreenClose.addEventListener("click", function() {
-    closeScreen(AppwindowScreen);
+    closeScreen(AppwindowScreen, "desktopApp");
 });
 
 
@@ -102,7 +108,7 @@ function deselectApp(element) {
 function handleAppClick(element, windowID) {
     if (element.classList.contains("selected")) {
         deselectApp(element);
-        openScreen(document.querySelector("#" + windowID));
+        openScreen(document.querySelector("#" + windowID), element.id);
     }
     else {
         selectApp(element);
@@ -120,9 +126,14 @@ function addWindowTapHandling(element) {
 
 var topBar = document.querySelector("#topBar");
 var Bottombar = document.querySelector("#Bottombar");
-function openScreen(element) {
+function openScreen(element, buttonID) {
     element.style.display = "flex" ;
     element.style.animation = "windowOpen 0.3s ease forwards";
+    if (buttonID) {
+        let button = document.getElementById(buttonID);
+        if (button) button.classList.add("desktopApp-active");
+        
+    }
     biggestIndex++;
     element.style.zIndex = biggestIndex;
     topBar.style.zIndex = biggestIndex + 1;
@@ -175,7 +186,7 @@ var content = [
 
 function setNotesContent(index) {
     var notesContent = document.querySelector("#Notes");
-    notesContent.innerHTML = content[index].content;
+     notesContent.innerHTML = content[index].content;
 }
 
 setNotesContent(0);
@@ -214,7 +225,7 @@ function addTosidebar(index) {
     var Appwindow2ScreenClose = document.querySelector("#closeScreen2");
 
     Appwindow2ScreenClose.addEventListener("click", function() {
-        closeScreen(Appwindow2Screen);
+        closeScreen(Appwindow2Screen, "desktopApp2");
     });
 
 
@@ -224,7 +235,7 @@ function addTosidebar(index) {
     var Appwindow3ScreenClose = document.querySelector("#closeScreen3");
 
     Appwindow3ScreenClose.addEventListener("click", function() {
-        closeScreen(Appwindow3Screen);
+        closeScreen(Appwindow3Screen, "desktopApp3");
     });
 
 initializeWindow("Appwindow4");
@@ -232,7 +243,7 @@ var Appwindow4Screen = document.querySelector("#Appwindow4");
 var Appwindow4ScreenClose = document.querySelector("#closeScreen4");
 
 Appwindow4ScreenClose.addEventListener("click", function() {
-    closeScreen(Appwindow4Screen);
+    closeScreen(Appwindow4Screen, "desktopApp4");
 });
     
 initializeWindow("Appwindow5");
@@ -240,7 +251,7 @@ var Appwindow5Screen = document.querySelector("#Appwindow5");
 var Appwindow5ScreenClose = document.querySelector("#closeScreen5");
 
 Appwindow5ScreenClose.addEventListener("click", function() {
-    closeScreen(Appwindow5Screen);
+    closeScreen(Appwindow5Screen, "desktopApp5");
 });
 
 function turnToDarkmode() {
