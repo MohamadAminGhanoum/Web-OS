@@ -214,6 +214,7 @@
     .desktopApp-active img {
         border-bottom: 3px solid rgb(255, 255, 255);
         transition: transform 0.3s ease, margin 0.3s ease;
+        padding-bottom: 4px;
     }
         .Appwindowheader {
             border-radius: 20px 20px 0px 0px;
@@ -341,7 +342,7 @@
 
 <div style="margin: 17px;">
     <div id="desktopApp6" onclick="handleAppClick(this, 'Appwindow6')">
-        <img src="Paper.io-2.png" class="mainScreenApp">
+        <img src="R.jpeg" class="mainScreenApp">
     </div>
 </div>
 
@@ -412,7 +413,16 @@
     </div>
 </div>
 
-<div ></div>
+<div id="Appwindow6" class="Appwindow" style="top: 55%; left: 44%; width: 900px !important; height: 600px !important;">
+    <div id="Appwindow6header" class="Appwindowheader">
+        <div style="width: 16px;"></div>
+        <p>Flappy bird</p>
+        <button class="closeScreen" id="closeScreen6"></button>
+    </div>
+    <div style="width: 100%; height: 100%; overflow: hidden; display: flex;">
+        <iframe src="https://flappybird.io/" style="width: 100%; height: 100%; border: none; background: white; border-radius: 14px;"></iframe>
+    </div>
+</div>
 
 <div id="Appwindow4" class="Appwindow" style="top: 50%; left: 50%; width: 900px !important; height: 600px !important;">
     <div id="Appwindow4header" class="Appwindowheader">

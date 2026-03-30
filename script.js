@@ -259,6 +259,12 @@ function turnToDarkmode() {
 
 }
 
+initializeWindow("Appwindow6");
+var Appwindow6Screen = document.querySelector("#Appwindow6");
+var Appwindow6ScreenClose = document.querySelector("#closeScreen6");
+Appwindow6ScreenClose.addEventListener("click", function() {
+    closeScreen(Appwindow6Screen, "desktopApp6");
+});
 
 function opentab(tabs, tabName) {
 var i, tabcontent, sidebarButton;
